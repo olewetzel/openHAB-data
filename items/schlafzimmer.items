@@ -1,0 +1,6 @@
+// Items aus dem Schlafzimmer
+
+// Nachttischlampe
+Dimmer  licht_sz_nachtlampe_helligkeit        <dimmablelight> (ghome, gschlafzimmer)            {channel="tradfri:0220:gwb072bf27c279:65538:brightness"}
+Dimmer  licht_sz_nachtlampe_farbe             <colorwheel>    (ghome, gschlafzimmer)            {channel="tradfri:0220:gwb072bf27c279:65538:color_temperature"}
+

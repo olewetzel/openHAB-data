@@ -1,0 +1,10 @@
+// ntp server
+ntp:ntp:default	[hostname="times.tubit.tu-berlin.de", refreshInterval=60, refresh=30]
+
+// Fritzbox
+Bridge avmfritz:fritzbox:1 [ ipAddress="192.168.178.1", password ="wzwzsmartwzwz"] {
+	FRITZ_DECT_100 DECT1 [ ain="08761 0855656" ]
+}
+
+// Systeminfo
+systeminfo:computer:work [interval_high=10, interval_medium=60] 

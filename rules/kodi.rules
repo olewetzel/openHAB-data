@@ -1,0 +1,23 @@
+rule "Etwas Licht, wenn Kodi pausiert"
+when
+    Item kodi_control changed to PAUSE
+    or Item koid_control changed to STOP
+then
+    if (nacht_event.state == ON) {
+	licht_wz_sofalampe_helligkeit.sendCommand(40)
+	licht_wz_stehlampe_helligkeit.sendCommand(75)
+	logInfo("Kino", "Wiedergabe angehalten! Licht angemacht")
+    }
+end 
+
+rule "Licht fast aus, wenn Kodi läuft"
+when
+    Item kodi_control changed to PLAY
+then
+    logInfo("Kino", "Lichter aus, Film geht weiter...")
+    if (nacht_event.state == ON) {
+        licht_wz_sofalampe_helligkeit.sendCommand(15)
+        licht_wz_stehlampe_helligkeit.sendCommand(0)
+        logInfo("Kino", "Wiedergabe läuft! Licht ist dunkel.")
+    }
+end

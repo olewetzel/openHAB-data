@@ -1,0 +1,6 @@
+Group	gHeimkino		"Heimkino"		<television>
+
+String	kodi_title	"Gerade läuft... [%s]"	<television>	(gHeimkino)	{ channel="kodi:kodi:f2bde659-a71c-23eb-01c4-5594f03d54d4:title" }
+Player  kodi_control	"Wiedergabe"		<television>	(gHeimkino)	{ channel="kodi:kodi:f2bde659-a71c-23eb-01c4-5594f03d54d4:control" }
+Switch  kodi_stop	"Wiedergabe beenden"	<television>	(gHeimkino)	{ channel="kodi:kodi:f2bde659-a71c-23eb-01c4-5594f03d54d4:stop" }
+

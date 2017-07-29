@@ -1,0 +1,15 @@
+// Items aus dem Badezimmer
+
+// Lampen
+Dimmer  licht_bz_duschlampe_helligkeit		<dimmablelight> (ghome, gbadezimmer)		{channel="tradfri:0220:gwb072bf27c279:65544:brightness"}
+Dimmer  licht_bz_duschlampe_farbe		<colorwheel>    (ghome, gbadezimmer)    	{channel="tradfri:0220:gwb072bf27c279:65544:color_temperature"}
+Dimmer  licht_bz_spiegellampe_helligkeit	<dimmablelight> (ghome, gbadezimmer)    	{channel="tradfri:0100:gwb072bf27c279:65545:brightness"}
+
+// Waschmaschine
+Switch  steckdose_bz_wama_anaus			<poweroutlet>	(ghome, gbadezimmer, gwama)	{channel="zwave:device:90770e88:node5:switch_binary"}
+Number  steckdose_bz_wama_watt 			<washingmachine>(ghome, gbadezimmer, gwama)     {channel="zwave:device:90770e88:node5:meter_watts"}
+Number  steckdose_bz_wama_powerfactor 		<washingmachine>(ghome, gbadezimmer, gwama)     {channel="zwave:device:90770e88:node5:meter_powerfactor"}
+Number  steckdose_bz_wama_kwh 			<washingmachine>(ghome, gbadezimmer, gwama)     {channel="zwave:device:90770e88:node5:meter_kwh"}
+Number  steckdose_bz_wama_current		<washingmachine>(ghome, gbadezimmer, gwama)     {channel="zwave:device:90770e88:node5:meter_current"}
+Number  steckdose_bz_wama_voltage		<washingmachine>(ghome, gbadezimmer, gwama)	{channel="zwave:device:90770e88:node5:meter_voltage"}
+

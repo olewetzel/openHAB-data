@@ -1,0 +1,3 @@
+// Wetterdaten aus services/weather.cfg
+Number   Temperature   "Temperature [%.2f °C]"   {weather="locationId=yahoo, type=temperature, property=current"}
+Number   Humidity      "Humidity [%d %%]"        {weather="locationId=yahoo, type=atmosphere, property=humidity"}

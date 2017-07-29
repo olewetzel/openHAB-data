@@ -1,0 +1,13 @@
+// homekit Anbindung weitere Geräte
+
+// Toms Mondlicht
+Switch	hk_tom_mondlicht
+	"Toms Mond"
+	[ "Lighting" ]
+	{ channel="zwave:device:90770e88:node6:switch_binary" }
+
+// Ingas Mondlicht
+Switch  hk_inga_mondlicht
+        "Ingas Mond"
+        [ "Lighting" ]
+        { channel="zwave:device:90770e88:node7:switch_binary" }

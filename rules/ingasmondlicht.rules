@@ -1,0 +1,6 @@
+//rule "Ingas Mond nach 30 Minuten ausmachen"
+//when 
+//    Item steckdose_iz_mondlampe_anaus changed 
+//then
+//    createTimer(now.plusSeconds(5)) [| sendCommand(steckdose_iz_mondlampe_anaus, OFF) ]
+//end

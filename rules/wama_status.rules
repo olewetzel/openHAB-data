@@ -1,0 +1,20 @@
+val Number MODE_OFF = 0
+val Number MODE_STANDBY = 1
+val Number MODE_ACTIVE = 2
+val Number MODE_FINISHED = 3
+
+rule "Waschmaschinenstatus"
+when
+    Item steckdose_bz_wama_watt changed
+then
+    if (steckdose_bz_wama_watt.state < 1) wama_status.postUpdate(MODE_OFF)
+    else if (steckdose_bz_wama_watt.state > 5) wama_status.postUpdate(MODE_ACTIVE)
+    else if (steckdose_bz_wama_watt.state < 4.5) {
+        if (wama_status.state == MODE_OFF) wama_status.postUpdate(MODE_STANDBY)
+        else if (wama_status.state == MODE_ACTIVE) {
+		wama_status.postUpdate(MODE_FINISHED)
+//		pushover("Die Wäsche ist fertig!")
+		sendTelegram("sensorenbot", "Die Wäsche ist fertig!")
+		}		
+    }
+end

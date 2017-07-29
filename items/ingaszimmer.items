@@ -1,0 +1,6 @@
+// Items aus Ingas Zimmer
+
+// Mondlicht
+Switch	steckdose_iz_mondlampe_anaus	<light>	(ghome, gingaszimmer)       {channel="zwave:device:90770e88:node7:switch_binary"}
+
+

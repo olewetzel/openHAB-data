@@ -1,0 +1,128 @@
+sitemap home label="Home" {
+	Frame label="Heute" {
+		Text item=Datum
+		Switch item=nacht_event label="Nachterkennung" mappings=[OFF="Tag", ON="Nacht"]
+		Text label="Wetter" {
+			Text item=Conditions
+			Text item=ObservationTime
+			Text item=Location_wu
+                        Text item=Station 
+                        Text item=Temperature 
+                        Text item=FeelTemp 
+                        Text item=Humidity 
+                        Text item=Pressure 
+                        Text item=RainD
+                        Text item=RainH 
+                        Text item=WindDirection
+                        Text item=WindDirection2 
+                        Text item=WindSpeed
+                        Text item=WindGust 
+                        Text item=DewPoint 
+                        Text item=HeatIndex 
+                        Text item=WindChill 
+                        Text item=Visibility 
+                        Text item=SolarRadiation 
+                        Text item=UV 
+                        Text item=ForecastTime
+                        Text item=ForecastCondition 
+                        Text item=ForecastTempMin 
+                        Text item=ForecastTempMax 
+                        Text item=ForecastHumidity 
+                        Text item=ForecastProbaPrecip 
+                        Text item=ForecastRain 
+                        Text item=ForecastSnow 
+                        Text item=ForecastMaxWindDirection 
+                        Text item=ForecastMaxWindDirection2 
+                        Text item=ForecastMaxWindSpeed
+                        Text item=ForecastAvgWindDirection 
+                        Text item=ForecastAvgWindDirection2 
+                        Text item=ForecastAvgWindSpeed 
+		}
+	}
+	Text label="Schlafzimmer" icon="bedroom" {
+		Slider	item=licht_sz_nachtlampe_helligkeit	label="Nachtlampe Helligkeit [%.0f %%]"
+		Slider  item=licht_sz_nachtlampe_farbe		label="Nachtlampe Farbe [%.0f %%]"
+	}
+	Text label="Wohnzimmer" icon="sofa" {
+		Slider item=licht_wz_sofalampe_helligkeit	label="Sofalampe Helligkeit [%.0f %%]"
+		Slider item=licht_wz_sofalampe_farbe		label="Sofalampe Farbe [%.0f %%]"
+		Slider item=licht_wz_stehlampe_helligkeit	label="Stehlampe Helligkeit [%.0f %%]"
+		Slider item=licht_wz_stehlampe_farbe		label="Stehlampe Farbe [%.0f %%]"
+		Slider item=licht_wz_tischvorne_helligkeit      label="Tischlampe vorne Helligkeit [%.0f %%]"
+                Slider item=licht_wz_tischvorne_farbe           label="Tischlampe vorne Farbe [%.0f %%]"
+		Slider item=licht_wz_tischmitte_helligkeit      label="Tischlampe mitte Helligkeit [%.0f %%]"
+                Slider item=licht_wz_tischmitte_farbe           label="Tischlampe mitte Farbe [%.0f %%]"
+		Slider item=licht_wz_tischhinten_helligkeit     label="Tischlampe hinten Helligkeit [%.0f %%]"
+                Slider item=licht_wz_tischhinten_farbe          label="Tischlampe hinten Farbe [%.0f %%]"
+	}
+	Text label="Badezimmer" icon="bath" {
+		Slider	item=licht_bz_duschlampe_helligkeit	label="Duschlampe Helligkeit [%.0f %%]"
+                Slider	item=licht_bz_duschlampe_farbe        	label="Duschlampe Farbe [%.0f %%]"
+		Slider  item=licht_bz_spiegellampe_helligkeit	label="Spiegellampe Helligkeit [%.0f %%]"
+		Text	item=wama_status
+		Switch	item=steckdose_bz_wama_anaus		label="Steckdose WaMa"
+		Text	item=steckdose_bz_wama_watt		label="Leistung WaMa [%.3f W]"
+		Text	item=steckdose_bz_wama_current		label="Strom WaMa [%.1f A]"
+	}
+	Text label="Küche" icon="kitchen" {
+		Slider  item=licht_ku_kuechenlampe_helligkeit   label="Küchenlampe Helligkeit [%.0f %%]"
+                Slider  item=licht_ku_kuechenlampe_farbe        label="Küchenlampe Farbe [%.0f %%]"
+	}
+	Text label="Toms Zimmer" icon="boy_2" {
+		Switch  item=steckdose_tz_mondlampe_anaus	label="Toms Mondlampe"
+	}
+	Text label="Ingas Zimmer" icon="girl_2" {
+                Switch  item=steckdose_iz_mondlampe_anaus       label="Ingas Mondlampe"
+        }
+	Text label="EG" icon="groundfloor" {
+		Text item=fritzdect100_temperatur
+	}
+	Frame label="Tag" {
+		Text item=Daemmerung_cDawns
+		Text item=Daemmerung_cDawn_Dauer
+		Text item=Sonnenaufgang
+		Text item=Sonnenuntergang
+		Text item=Daemmerung_cDuske
+                Text item=Daemmerung_cDusk_Dauer
+		Text item=Tageszeit
+//		Text item=Nachtende
+//		Text item=Nachtstart
+	}
+	Frame label="Jahreszeit" {
+		Text item=Jahreszeit_Name
+		Text item=Jahreszeit_Fruehjahr
+		Text item=Jahreszeit_Sommer
+		Text item=Jahreszeit_Herbst
+		Text item=Jahreszeit_Winter
+	}
+	Frame label="Mond" {
+		Text item=Mondaufgang
+		Text item=Monduntergang
+		Text item=Mondphase_Name
+		Text item=Vollmond
+		Text item=Neumond
+	}
+	Frame label="Sonnenstand" {
+		Text item=Sonnenazimut
+		Text item=Sonnenhoehe
+	}
+	Frame label="Mondstand" {
+		Text item=Mondazimut
+                Text item=Mondhoehe
+	}
+	Frame label="Kodi" {
+		Text item=kodi_control label="Kodi Status:[%s]"
+		Default item=kodi_control
+        	Switch item=kodi_stop
+	        Text item=kodi_title
+		}
+	Frame label="System Info" {
+		Text item=CPU_Load label="CPU Load"
+		Text item=Storage_Available label="Speicher verfügbar"
+		Text item=Storage_Used label="Speicher genutzt"
+		Text item=Memory_Available label="Arbeitsspeicher verfügbar"
+		Text item=Memory_Used label="Arbeitsspecher genutzt"
+		Text item=CPU_Uptime label="Uptime"
+	}
+}
+

@@ -1,0 +1,10 @@
+// Allgemeine Daten
+
+// Tag und Uhrzeit
+DateTime	Datum	"Zeit: [%1$tA, %1$td.%1$tm.%1$tY %1$tT]"	<calendar>	(Status)	{channel="ntp:ntp:default:dateTime"}
+
+// Waschmaschinenüberwachung
+Number wama_status "Waschmaschine Status [MAP(wama_status.map):%d]"
+
+// FRITZ Dect Repeater 100
+Number fritzdect100_temperatur "Temperatur [%.1f °C]" { channel="avmfritz:FRITZ_DECT_Repeater_100:1:087610855656:temperature" }

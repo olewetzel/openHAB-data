@@ -1,0 +1,32 @@
+rule "Guten Morgen Tweet"
+when
+	Time cron "0 30 06 * * ?"
+then
+	var Number Stunde = now.getHourOfDay
+	var Number Minute = now.getMinuteOfHour
+	sendTweet("Guten Morgen! Es ist " +Stunde +":" +Minute +" Uhr und es sind draußen " +wetter_temperatur.state +"°C bei einer Luftfeuchtigkeit von " +wetter_luftfeuchtigkeit.state +"% hier am Sensorenheim.")
+end
+//--------------------
+rule "WaMa Standby"
+when
+	Item wama_status changed from 0 to 1
+then
+	sendTweet("Nanu? Jemand hat die Waschmaschine angemacht!")
+end
+//--------------------
+rule "WaMa Aktiv"
+when
+        Item wama_status changed from 1 to 2
+then
+        sendTweet("Jetzt dreht sich hier die Waschmaschine! Huuuuuiiiii!")
+end
+//--------------------
+rule "WaMa fertig"
+when
+        Item wama_status changed from 2 to 3
+then
+        sendTweet("Die Waschmaschine ist fertig. Kommt mal jemand vorbei?")
+end
+//--------------------
+//--------------------
+

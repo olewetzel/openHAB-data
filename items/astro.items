@@ -1,0 +1,47 @@
+Group gAstro    <sun>   (gALL)  // Astro
+Group gAstroSonne <sun> (gALL)  // Sonne
+Group gAstroDaemmerung  (gALL)  // Dämmerung
+Group gAstroMond        (gALL)  // Mond
+Group gAstroJahreszeit  (gALL)  // Jahreszeit
+Group gAstroEreignis    (gALL)  // Ereignisse
+Group gAstroSternzeichen (gALL) // Sternzeichen
+ 
+ 
+/* ----------- Astro ---------------------- */
+DateTime    	Nachtende        		"Nacht Ende [%1$tH:%1$tM Uhr]"  	<moon>    	(gAstro) 			{channel="astro:sun:cad8c2a3:astroDawn#start"}
+DateTime	Sonnenaufgang   		"Sonnenaufgang [%1$tH:%1$tM]"   	<sunrise>   	(gAstro, gAstroSonne)   	{channel="astro:sun:cad8c2a3:rise#start"}
+DateTime        Sonnenuntergang                 "Sonnenuntergang [%1$tH:%1$tM]" 	<sunset>       	(gAstro, GastroSonne)           {channel="astro:sun:cad8c2a3:set#end"}
+DateTime    	Nachtstart   			"Nacht Beginn [%1$tH:%1$tM Uhr]"	<moon>      	(gAstro)			{channel="astro:sun:cad8c2a3:astroDusk#end"}
+String		Tageszeit			"Tageszeit [MAP(astro.map):%s]"                         (gAstro)			{channel="astro:sun:cad8c2a3:phase#name"}
+
+// virtueller Schalter für Lichtsteuerung
+Switch		nacht_event
+
+// Daemmerung
+DateTime        Daemmerung_cDawns               "Morgendämmerung ab [%1$tH:%1$tM]"                      (gAstro, gAstroDaemmerung)      {channel="astro:sun:cad8c2a3:civilDawn#start"}
+Number          Daemmerung_cDawn_Dauer          "Morgendämmerung Dauer [%.0f Minuten]"                  (gAstro, gAstroDaemmerung)      {channel="astro:sun:cad8c2a3:civilDawn#duration"}
+DateTime        Daemmerung_cDuske		"Abenddämmerung bis [%1$tH:%1$tM]"                      (gAstro, gAstroDaemmerung)      {channel="astro:sun:cad8c2a3:civilDusk#end"}
+Number   	Daemmerung_cDusk_Dauer		"Abenddämmerung Dauer [%.0f Minuten]"         		(gAstro, gAstroDaemmerung)      {channel="astro:sun:cad8c2a3:nauticDawn#duration"}
+ 
+// Sonnenstand
+Number		Sonnenazimut			"Azimut [%.2f °]"			<sun>		(gAstro, gAstroSonne)   	{channel="astro:sun:cad8c2a3:position#azimuth"}
+Number		Sonnenhoehe			"Sonnenhöhe [%.2f °]"      		<sun>		(gAstro, gAstroSonne)   	{channel="astro:sun:cad8c2a3:position#elevation"}
+ 
+String		Tierkreis_Zeichen       	"Tierkreiszeichen [MAP(astro.map):%s]"			(gAstro, gAstroSternzeichen)    {channel="astro:sun:cad8c2a3:zodiac#sign"}
+DateTime	Tierkreis_Beginn       		"Beginn [%1$td.%1$tm.%1$tY]"				(gAstro, gAstroSternzeichen)    {channel="astro:sun:cad8c2a3:#start"}
+DateTime	Tierkreis_Ende			"Ende [%1$td.%1$tm.%1$tY]"				(gAstro, gAstroSternzeichen)    {channel="astro:sun:cad8c2a3:zodiac#end"}
+ 
+String		Jahreszeit_Name			"Jahreszeit [MAP(astro.map):%s]"			(gAstro, gAstroJahreszeit)      {channel="astro:sun:cad8c2a3:season#name"}
+DateTime	Jahreszeit_Fruehjahr		"Frühlingsbeginn [%1$td.%1$tm.%1$tY %1$tH:%1$tM]"       (gAstro, gAstroJahreszeit)      {channel="astro:sun:cad8c2a3:season#spring"}
+DateTime	Jahreszeit_Sommer		"Sommerbeginn [%1$td.%1$tm.%1$tY %1$tH:%1$tM]"		(gAstro, gAstroJahreszeit)      {channel="astro:sun:cad8c2a3:season#summer"}
+DateTime	Jahreszeit_Herbst      		"Herbstbeginn [%1$td.%1$tm.%1$tY %1$tH:%1$tM]"		(gAstro, gAstroJahreszeit)      {channel="astro:sun:cad8c2a3:season#autumn"}
+DateTime	Jahreszeit_Winter		"Winterbeginn [%1$td.%1$tm.%1$tY %1$tH:%1$tM]"		(gAstro, gAstroJahreszeit)      {channel="astro:sun:cad8c2a3:season#winter"}
+
+// Mond 
+DateTime	Mondaufgang			"Mondaufgang [%1$tH:%1$tM]"           			<moon>  (gAstro, gAstroMond)		{channel="astro:moon:c4deb684:rise#start"}
+DateTime        Monduntergang	                "Monduntergang [%1$tH:%1$tM]"     	    		<moon>  (gAstro, GastroMond)		{channel="astro:moon:c4deb684:set#end"}
+String		Mondphase_Name			"Mondphase [MAP(astro.map):%s]"   			<moon>	(gAstro, gAstroMond)		{channel="astro:moon:c4deb684:phase#name"}
+Number          Mondazimut                      "Mondazimut [%.2f °]"                   		<Mond>  (gAstro, gAstroSonne)           {channel="astro:moon:c4deb684:position#azimuth"}
+Number          Mondhoehe                     	"Mondhöhe [%.2f °]"   			                <Mond>  (gAstro, gAstroSonne)           {channel="astro:moon:c4deb684:position#elevation"}
+DateTime	Vollmond			"Nächster Vollmond [%1$td.%1$tm.%1$tY, %1$tH:%1$tM Uhr]"<moon>	(gAstro, gAstroMond)		{channel="astro:moon:c4deb684:phase#full"}
+DateTime	Neumond				"Nächster Neumond [%1$td.%1$tm.%1$tY, %1$tH:%1$tM Uhr]" <moon>	(gAstro, gAstroMond)		{channel="astro:moon:c4deb684:phase#new"}

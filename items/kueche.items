@@ -1,0 +1,6 @@
+// Items aus der Küche
+
+// Lampe
+Dimmer	licht_ku_kuechenlampe_helligkeit	<dimmablelight>	(ghome, gkueche)	{channel="tradfri:0220:gwb072bf27c279:65547:brightness"}
+Dimmer  licht_ku_kuechenlampe_farbe	        <colorwheel>	(ghome, gkueche)        {channel="tradfri:0220:gwb072bf27c279:65547:color_temperature"}
+

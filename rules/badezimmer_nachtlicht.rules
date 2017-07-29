@@ -1,0 +1,21 @@
+rule "Nachts im Badezimmer Licht dimmen" 
+when 
+    Time cron "0 0 23 * * ?" 
+then
+    sendCommand(licht_bz_duschlampe_helligkeit, 25)
+    sendCommand(licht_bz_spiegellampe_helligkeit, 25)
+    createTimer(now.plusSeconds(8)) [|  sendCommand(licht_bz_duschlampe_helligkeit, 0) ]
+    createTimer(now.plusSeconds(8)) [|  sendCommand(licht_bz_spiegellampe_helligkeit, 0) ]
+
+end
+ 
+rule "Morgens das Licht im Badezimmer wieder hell"
+when 
+    Channel 'astro:sun:cad8c2a3:rise#event' triggered START
+then
+    sendCommand(licht_bz_duschlampe_helligkeit, 100)
+    sendCommand(licht_bz_spiegellampe_helligkeit, 100)
+    createTimer(now.plusSeconds(8)) [|  sendCommand(licht_bz_duschlampe_helligkeit, 0) ]
+    createTimer(now.plusSeconds(8)) [|  sendCommand(licht_bz_spiegellampe_helligkeit, 0) ]
+
+end

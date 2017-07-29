@@ -1,0 +1,42 @@
+String Conditions "Bedingungen" {channel="weatherunderground:weather:59597a34:current#conditions"}
+Image Icon_wu {channel="weatherunderground:weather:59597a34:current#icon"}
+DateTime ObservationTime "Beobachtungszeit [%1$tH:%1$tM]" <clock>  {channel="weatherunderground:weather:59597a34:current#observationTime"}
+String Location_wu "Ort [%s]" {channel="weatherunderground:weather:59597a34:current#location"}
+String Station "Station [%s]" {channel="weatherunderground:weather:59597a34:current#stationId"}
+
+Number Temperature "Aktuelle Temperatur [%.1f °C]" <temperature> {channel="weatherunderground:weather:59597a34:current#temperature"}
+Number FeelTemp "gefühlte Temperatur [%.1f °C]" <temperature>  {channel="weatherunderground:weather:59597a34:current#feelingTemperature"}
+
+Number Humidity "Luftfeuchtigkeit [%d %%]" <humidity> {channel="weatherunderground:weather:59597a34:current#relativeHumidity"}
+Number Pressure "Luftdruck [%.0f hPa]" <wind> {channel="weatherunderground:weather:59597a34:current#pressure"}
+
+Number RainD "Regen am Tag [%.1f mm]" <rain> {channel="weatherunderground:weather:59597a34:current#precipitationDay"}
+Number RainH "Regen in Stunde [%.1f mm/h]" <rain> {channel="weatherunderground:weather:59597a34:current#precipitationHour"}
+
+String WindDirection "Windrichtung [%s]" <wind> {channel="weatherunderground:weather:59597a34:current#windDirection"}
+Number WindDirection2 "Windrichtung [%.0f °]" <wind>  {channel="weatherunderground:weather:59597a34:current#windDirectionDegrees"}
+Number WindSpeed "Windgeschwindigkeit [%.1f km/h]" <wind> {channel="weatherunderground:weather:59597a34:current#windSpeed"}
+Number WindGust "Windböe [%.1f km/h]" <wind> {channel="weatherunderground:weather:59597a34:current#windGust"}
+
+Number DewPoint "Taupunkt [%.1f °C]" <temperature>  {channel="weatherunderground:weather:59597a34:current#dewPoint"}
+Number HeatIndex "Heat Index [%.1f °C]" <temperature>  {channel="weatherunderground:weather:59597a34:current#heatIndex"}
+Number WindChill "Wind Chill [%.1f °C]" <temperature>  {channel="weatherunderground:weather:59597a34:current#windChill"}
+Number Visibility "Sichtweite [%.1f km]" {channel="weatherunderground:weather:59597a34:current#visibility"}
+Number SolarRadiation "Solarstrahlung [%.2f] W/m2"  {channel="weatherunderground:weather:59597a34:current#solarRadiation"}
+Number UV "UV Index [%.1f]" {channel="weatherunderground:weather:59597a34:current#UVIndex"}
+
+DateTime ForecastTime "Vorhersage für [%1$tH:%1$tM]" <clock>  {channel="weatherunderground:weather:59597a34:forecastToday#forecastTime"}
+String ForecastCondition "Vorhersage Bedingungen [%s]"  {channel="weatherunderground:weather:59597a34:forecastToday#conditions"}
+Image ForecastIcon_wu "Forecast icon"  {channel="weatherunderground:weather:59597a34:forecastToday#icon"}
+Number ForecastTempMin "Vorhersage min Temp [%.1f °C]" <temperature>  {channel="weatherunderground:weather:59597a34:forecastToday#minTemperature"}
+Number ForecastTempMax "Vorhersage max Temp [%.1f °C]" <temperature>  {channel="weatherunderground:weather:59597a34:forecastToday#maxTemperature"}
+Number ForecastHumidity "Vorhersage Luftfeuchtigkeit [%d %%]" <humidity>  {channel="weatherunderground:weather:59597a34:forecastToday#relativeHumidity"}
+Number ForecastProbaPrecip "Proba precip [%d %%]" <rain>  {channel="weatherunderground:weather:59597a34:forecastToday#probaPrecipitation"}
+Number ForecastRain "voraussichtliche Regenmenge [%.1f mm]" <rain> {channel="weatherunderground:weather:59597a34:forecastToday#precipitationDay"}
+Number ForecastSnow "vorraussichtlicher Schnee [%.2f cm]" <rain> {channel="weatherunderground:weather:59597a34:forecastToday#snow"}
+String ForecastMaxWindDirection "Max Windrichting [%s]" <wind>  {channel="weatherunderground:weather:59597a34:forecastToday#maxWindDirection"}
+Number ForecastMaxWindDirection2 "Max Windrichtung [%.0f °]" <wind>  {channel="weatherunderground:weather:59597a34:forecastToday#maxWindDirectionDegrees"}
+Number ForecastMaxWindSpeed "Max Windgeschwindigkeit [%.1f km/h]" <wind>  {channel="weatherunderground:weather:59597a34:forecastToday#maxWindSpeed"}
+String ForecastAvgWindDirection "durchschnittliche Windrichtung [%s]" <wind>  {channel="weatherunderground:weather:59597a34:forecastToday#averageWindDirection"}
+Number ForecastAvgWindDirection2 "durchschnittliche Windrichtung [%.0f °]" <wind>  {channel="weatherunderground:weather:59597a34:forecastToday#averageWindDirectionDegrees"}
+Number ForecastAvgWindSpeed "durchschnittliche Windgeschwindigkeit [%.1f km/h]" <wind>  {channel="weatherunderground:weather:59597a34:forecastToday#averageWindSpeed"}

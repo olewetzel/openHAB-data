@@ -1,0 +1,18 @@
+/* CPU information*/
+String CPU_Name                     { channel="systeminfo:computer:work:cpu#name" }
+String CPU_Description              { channel="systeminfo:computer:work:cpu#description" }
+Number CPU_Load                     { channel="systeminfo:computer:work:cpu#load"} 
+Number CPU_Uptime	"Uptime [JS(laufzeit.js):%s]"	<clock>	{ channel="systeminfo:computer:work:cpu#uptime" }
+
+/* Drive information*/
+String Drive_Name                    { channel="systeminfo:computer:work:drive#name" }
+String Drive_Model                   { channel="systeminfo:computer:work:drive#model" }
+String Drive_Serial                  { channel="systeminfo:computer:work:drive#serial" }
+
+/* Storage information*/
+Number Storage_Available             { channel="systeminfo:computer:work:storage#available" }
+Number Storage_Used                  { channel="systeminfo:computer:work:storage#used" }
+
+/* Memory information*/
+Number Memory_Available              { channel="systeminfo:computer:work:memory#available" }
+Number Memory_Used                   { channel="systeminfo:computer:work:memory#used" }

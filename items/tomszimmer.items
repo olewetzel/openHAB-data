@@ -1,0 +1,6 @@
+// Items aus Toms Zimmer
+
+// Mondlicht
+Switch	steckdose_tz_mondlampe_anaus	<light>	(ghome, gtomszimmer)       {channel="zwave:device:90770e88:node6:switch_binary"}
+
+

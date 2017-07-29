@@ -1,0 +1,17 @@
+rule "Sonnenaufgang - Nachtende"
+when
+	Channel 'astro:sun:cad8c2a3:rise#event' triggered START
+then
+	logInfo("Nachtüberwachung", "Die Sonne geht gerade auf, es wird hell.")
+	sendTweet("Die Sonne geht gerade auf, es wird hell.")
+	nacht_event.sendCommand(OFF)
+end
+
+rule "Sonnenuntergang - Nachtbeginn"
+when
+	Channel 'astro:sun:cad8c2a3:set#event' triggered END
+then
+	logInfo("Nachtüberwachung", "Die Sonne ist untergegangen, es ist jetzt dunkel draußen.")
+	sendTweet("Die Sonne ist untergegangen, es wird jetzt dunkel draußen.")
+	nacht_event.sendCommand(ON)
+end

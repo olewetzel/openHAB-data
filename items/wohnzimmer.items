@@ -1,0 +1,25 @@
+// items aus dem Wohnzimmer
+
+Group ghome		(gALL)
+Group gwohnzimmer	(gALL)
+Group gtisch		(gALL)
+
+
+// Sofalampe
+Dimmer	licht_wz_sofalampe_helligkeit	<dimmablelight>	(ghome, gwohnzimmer, gsofa)	{channel="tradfri:0220:gwb072bf27c279:65537:brightness"}
+Dimmer	licht_wz_sofalampe_farbe	<colorwheel>	(ghome, gwohnzimmer, gsofa)	{channel="tradfri:0220:gwb072bf27c279:65537:color_temperature"}
+
+// Tischlampen
+Dimmer	licht_wz_tischvorne_helligkeit	<dimmablelight>	(ghome, gwohnzimmer, gtisch)    {channel="tradfri:0220:gwb072bf27c279:65540:brightness"}
+Dimmer  licht_wz_tischvorne_farbe  	<colorwheel>	(ghome, gwohnzimmer, gtisch)    {channel="tradfri:0220:gwb072bf27c279:65540:color_temperature"}
+Dimmer  licht_wz_tischmitte_helligkeit  <dimmablelight> (ghome, gwohnzimmer, gtisch)    {channel="tradfri:0220:gwb072bf27c279:65541:brightness"}
+Dimmer  licht_wz_tischmitte_farbe       <colorwheel> 	(ghome, gwohnzimmer, gtisch)    {channel="tradfri:0220:gwb072bf27c279:65541:color_temperature"}
+Dimmer  licht_wz_tischhinten_helligkeit	<dimmablelight> (ghome, gwohnzimmer, gtisch)    {channel="tradfri:0220:gwb072bf27c279:65542:brightness"}
+Dimmer  licht_wz_tischhinten_farbe	<colorwheel>	(ghome, gwohnzimmer, gtisch)	{channel="tradfri:0220:gwb072bf27c279:65542:color_temperature"}
+
+// Stehlampe
+Dimmer  licht_wz_stehlampe_helligkeit   <dimmablelight> (ghome, gwohnzimmer)    	{channel="tradfri:0220:gwb072bf27c279:65548:brightness"}
+Dimmer  licht_wz_stehlampe_farbe        <colorwheel>    (ghome, gwohnzimmer)    	{channel="tradfri:0220:gwb072bf27c279:65548:color_temperature"}
+
+
+
