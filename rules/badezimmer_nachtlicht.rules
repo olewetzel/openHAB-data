@@ -1,21 +1,24 @@
-rule "Nachts im Badezimmer Licht dimmen" 
-when 
-    Time cron "0 0 23 * * ?" 
+rule "Nachts im Badezimmer Licht dimmen"
+when
+    Time cron "0 0 23 * * ?"
 then
-    sendCommand(licht_bz_duschlampe_helligkeit, 25)
-    sendCommand(licht_bz_spiegellampe_helligkeit, 25)
-    createTimer(now.plusSeconds(8)) [|  sendCommand(licht_bz_duschlampe_helligkeit, 0) ]
-    createTimer(now.plusSeconds(8)) [|  sendCommand(licht_bz_spiegellampe_helligkeit, 0) ]
-
+    if (licht_bz_duschlampe_helligkeit == OFF) {
+        sendCommand(licht_bz_duschlampe_helligkeit, 25)
+        sendCommand(licht_bz_spiegellampe_helligkeit, 25)
+        createTimer(now.plusSeconds(8)) [|  sendCommand(licht_bz_duschlampe_hel$
+        createTimer(now.plusSeconds(8)) [|  sendCommand(licht_bz_spiegellampe_h$
+    else {
+        sendCommand(licht_bz_duschlampe_helligkeit, 25)
+        sendCommand(licht_bz_spiegellampe_helligkeit, 25)}
 end
- 
+
 rule "Morgens das Licht im Badezimmer wieder hell"
-when 
+when
     Time cron "0 30 6 * * ?"
 then
     sendCommand(licht_bz_duschlampe_helligkeit, 100)
     sendCommand(licht_bz_spiegellampe_helligkeit, 100)
-    createTimer(now.plusSeconds(8)) [|  sendCommand(licht_bz_duschlampe_helligkeit, OFF) ]
-    createTimer(now.plusSeconds(8)) [|  sendCommand(licht_bz_spiegellampe_helligkeit, OFF) ]
+    createTimer(now.plusSeconds(10)) [|  sendCommand(licht_bz_duschlampe_hellig$
+    createTimer(now.plusSeconds(10)) [|  sendCommand(licht_bz_spiegellampe_hell$
 
 end
