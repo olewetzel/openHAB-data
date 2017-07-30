@@ -15,7 +15,7 @@ when
 then
     sendCommand(licht_bz_duschlampe_helligkeit, 100)
     sendCommand(licht_bz_spiegellampe_helligkeit, 100)
-    createTimer(now.plusSeconds(8)) [|  sendCommand(licht_bz_duschlampe_helligkeit, 0) ]
-    createTimer(now.plusSeconds(8)) [|  sendCommand(licht_bz_spiegellampe_helligkeit, 0) ]
+    createTimer(now.plusSeconds(8)) [|  sendCommand(licht_bz_duschlampe_helligkeit, OFF) ]
+    createTimer(now.plusSeconds(8)) [|  sendCommand(licht_bz_spiegellampe_helligkeit, OFF) ]
 
 end
